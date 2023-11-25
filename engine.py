@@ -13,7 +13,7 @@ PORT = os.getenv("DB_PORT")
 NAME = os.getenv("DB_NAME")
 
 try:
-    base_engine = create_engine(f'postgresql+psycopg2://{USER}:{PASSWORD}@{HOST}:{PORT}/{NAME}')
+    base_engine = create_engine(f'postgresql+psycopg2://{USER}:{PASSWORD}@{HOST}:{PORT}/{NAME}', pool_pre_ping=True)
 except Exception as e:
     base_engine = create_engine("sqlite://", echo=True)
     Base.metadata.drop_all(base_engine)
