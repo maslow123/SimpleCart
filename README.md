@@ -1,3 +1,7 @@
+Nama: M Fadhly Noor Rizqi
+NIM: 201011400094
+Kelas: 07TPLE005
+
 # SimpleCart
 
 implement simple cart and promotion
