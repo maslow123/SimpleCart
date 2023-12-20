@@ -17,13 +17,13 @@ def test_product_api(client):
 
 # post new cart
 def test_post_cart(client):
-    response = client.post("/api/cart", json={
-        "coupon_code": "",
+    resp = client.post("/api/cart", json={
+        "coupon_code": '',
         "shipping_fee": 30000,
         "cart_items": [{
             "product_id": 5,
             "qty": 2
         }]
     })
-    assert response.status_code == 200
-    assert b"data created" in response.data
+    assert resp.status_code == 200
+    assert b"data created" in resp.data
